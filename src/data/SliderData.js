@@ -2,6 +2,9 @@ import ImageOne from "../assets/images/house-1.jpg";
 import ImageTwo from "../assets/images/house-2.jpg";
 import ImageThree from "../assets/images/house-3.jpg";
 import ImageFour from "../assets/images/house-4.jpg";
+import ImageFive from "../assets/images/slide-1.jpg";
+import ImageSix from "../assets/images/slide-2.jpg";
+import ImageSeven from "../assets/images/slide-3.jpg";
 
 export const SliderData = [
   {
@@ -34,6 +37,33 @@ export const SliderData = [
     path: "/homes",
     label: "View Home",
     image: ImageFour,
+    alt: "House"
+  }
+];
+
+export const SliderDataTwo = [
+  {
+    title: "House in Las Vegas, Nevada",
+    price: "$8,980,000",
+    path: "/homes",
+    label: "View Home",
+    image: ImageFive,
+    alt: "House"
+  },
+  {
+    title: "House in Austin, Texas",
+    price: "$3,460,000",
+    path: "/homes",
+    label: "View Home",
+    image: ImageSix,
+    alt: "House"
+  },
+  {
+    title: "House in Alajuela, Costa Rica",
+    price: "$5,400,000",
+    path: "/homes",
+    label: "View Home",
+    image: ImageSeven,
     alt: "House"
   }
 ];
