@@ -5,8 +5,9 @@ import Hero from "./components/hero/hero.component";
 import { SliderData } from "./data/SliderData";
 import Dropdown from "./components/dropdown/dropdown.component";
 import InfoSection from "./components/info-section/info-section.component";
-import { InfoDataOne } from "./data/InfoData";
+import { InfoDataOne, InfoDataTwo } from "./data/InfoData";
 import Listings from "./components/listings/listings.component";
+import Features from "./components/features/features.component";
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,6 +23,8 @@ function App() {
       <Hero slides={SliderData} />
       <InfoSection {...InfoDataOne} />
       <Listings />
+      <Features />
+      <InfoSection {...InfoDataTwo} />
     </>
   );
 }
