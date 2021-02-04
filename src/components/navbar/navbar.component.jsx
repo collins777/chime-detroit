@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled, { css } from "styled-components/macro";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { menuData } from "../../data/MenuData";
 import { Button } from "../button/button.component";
 import Bars from "../../assets/images/bars.svg";
+import { truncate } from "fs";
 
 ////////////////////////////////////////////////////////////
 ///// STYLED COMPONENTS
@@ -79,8 +80,39 @@ const NavBtn = styled.div`
 ///// REACT
 
 const Navbar = ({ toggle }) => {
+  const [navbar, setNavbar] = useState(false);
+  const location = useLocation();
+
+  const changeBackground = () => {
+    // if page offset is greater or equal to 60px
+    if (window.pageYOffset >= 60) {
+      setNavbar(true);
+    } else {
+      setNavbar(false);
+    }
+  };
+
+  let style = {
+    // if the navbar is not on the homepage change its color to orange
+    backgroundColor:
+      navbar || location.pathname !== "/" ? "#cd853f" : "transparent",
+    transition: "0.4s"
+  };
+
+  // Event listener to listen for scroll
+  useEffect(() => {
+    const watchScroll = () => {
+      window.addEventListener("scroll", changeBackground);
+    };
+
+    watchScroll();
+    return () => {
+      window.removeEventListener("scroll", changeBackground);
+    };
+  }, []);
+
   return (
-    <Nav>
+    <Nav style={style}>
       <Logo to="/">CHIME DET</Logo>
       <MenuBars onClick={toggle} />
       <NavMenu>
