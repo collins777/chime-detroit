@@ -78,11 +78,11 @@ const NavBtn = styled.div`
 ////////////////////////////////////////////////////////////
 ///// REACT
 
-const Navbar = () => {
+const Navbar = ({ toggle }) => {
   return (
     <Nav>
       <Logo to="/">CHIME DET</Logo>
-      <MenuBars />
+      <MenuBars onClick={toggle} />
       <NavMenu>
         {menuData.map((item, i) => (
           <NavMenuLinks to={item.link} key={i}>
