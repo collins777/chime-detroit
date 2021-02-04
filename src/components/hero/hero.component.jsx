@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+ import React, { useState/*, useRef, useEffect*/ } from "react";
 import styled, { css } from "styled-components/macro";
 import { Button } from "../button/button.component";
 import { IoMdArrowRoundForward } from "react-icons/io";
@@ -138,7 +138,7 @@ const NextArrow = styled(IoArrowForward)`
 const Hero = ({ slides }) => {
   const [current, setCurrent] = useState(0);
   const length = slides.length;
-  const timeOut = useRef(null);
+  // const timeOut = useRef(null);
 
   // Automated Slider Effect
   //   useEffect(() => {
