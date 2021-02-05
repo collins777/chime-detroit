@@ -33,8 +33,8 @@ const Heading = styled.div`
 const InfoRow = styled.div`
   display: flex;
   flex-direction: row;
-  align-items: center; 
-  justify-content: center; 
+  align-items: center;
+  justify-content: center;
   padding: 1rem 0rem;
 
   @media screen and (max-width: 768px) {
@@ -91,10 +91,22 @@ const Listings = () => {
     <Section>
       <Container>
         <Heading>
-          <h1>View our newest Homes</h1>
+          <h1
+            data-aos="fade-right"
+            data-aos-duration="1000"
+            data-aos-once="true"
+            data-aos-anchor-placement="center bottom"
+          >
+            View our newest Homes
+          </h1>
         </Heading>
         <InfoRow>
-          <InfoWrap>
+          <InfoWrap
+            data-aos="zoom-out-up"
+            data-aos-duration="1200"
+            data-aos-once="true"
+            data-aos-anchor-placement="center bottom"
+          >
             <Image src={HomeOne} alt="home" />
             <h2>8 Bed 10 Bath House in Venice, CA</h2>
             <InfoLink to="/homes">
@@ -102,8 +114,22 @@ const Listings = () => {
               <Arrow />
             </InfoLink>
           </InfoWrap>
-          <InfoWrap>
-            <Image src={HomeTwo} alt="home" css={`margin-top: 120px; @media screen and (max-width: 768px) {margin-top: 0px;}`} />
+          <InfoWrap
+            data-aos="zoom-out-down"
+            data-aos-duration="1200"
+            data-aos-once="true"
+            data-aos-anchor-placement="center bottom"
+          >
+            <Image
+              src={HomeTwo}
+              alt="home"
+              css={`
+                margin-top: 120px;
+                @media screen and (max-width: 768px) {
+                  margin-top: 0px;
+                }
+              `}
+            />
             <h2>4 Bed 2 Bath House in Maimi, FL</h2>
             <InfoLink to="/homes">
               <p>View Details</p>

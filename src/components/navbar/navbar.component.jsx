@@ -4,7 +4,7 @@ import { Link, useLocation } from "react-router-dom";
 import { menuData } from "../../data/MenuData";
 import { Button } from "../button/button.component";
 import Bars from "../../assets/images/bars.svg";
-import { truncate } from "fs";
+// import { truncate } from "fs";
 
 ////////////////////////////////////////////////////////////
 ///// STYLED COMPONENTS

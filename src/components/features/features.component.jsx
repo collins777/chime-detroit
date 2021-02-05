@@ -86,7 +86,13 @@ const Features = () => {
       <Container>
         <Wrap>
           <ColumnLeft>
-            <Content>
+            <Content
+              data-aos="fade-right"
+              data-aos-duration="1200"
+              data-aos-delay="300"
+              data-aos-once="true"
+              data-aos-anchor-placement="center bottom"
+            >
               <h1>Stunning Interior</h1>
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia
@@ -101,7 +107,13 @@ const Features = () => {
             </Content>
           </ColumnLeft>
           <ColumnRight>
-            <Image src={ImageOne} />
+            <Image
+              src={ImageOne}
+              data-aos="fade-left"
+              data-aos-duration="1200"
+              data-aos-once="true"
+              data-aos-anchor-placement="center bottom"
+            />
           </ColumnRight>
         </Wrap>
       </Container>

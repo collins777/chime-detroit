@@ -50,20 +50,20 @@ const ColumnRight = styled.div`
   justify-content: center;
   align-items: center;
 
+  @media screen and (max-width: 768px) {
+    /* for mobile display text first then image */
+    order: ${({ reverse }) => (reverse ? "2" : "1")};
+  }
+
   img {
     width: 100%;
     height: 100%;
-    object-fit: contain;
+    object-fit: cover;
 
     @media screen and (max-width: 768px) {
       width: 90%;
       height: 90%;
     }
-  }
-
-  @media screen and (max-width: 768px) {
-    /* for mobile display text first then image */
-    order: ${({ reverse }) => (reverse ? "2" : "1")};
   }
 `;
 
@@ -76,12 +76,20 @@ const InfoSection = ({
   paragraphTwo,
   buttonLabel,
   reverse,
-  image
+  image,
+  delay
 }) => {
   return (
     <Section>
       <Container>
-        <ColumnLeft>
+        <ColumnLeft
+          reverse={reverse}
+          data-aos="fade-up"
+          data-aos-duration="1000"
+          data-aos-once="true"
+          data-aos-delay={delay}
+          // data-aos-anchor-placement="center bottom"
+        >
           <h1>{heading}</h1>
           <p>{paragraphOne}</p>
           <p>{paragraphTwo}</p>
@@ -89,8 +97,15 @@ const InfoSection = ({
             {buttonLabel}
           </Button>
         </ColumnLeft>
-        <ColumnRight revers={reverse}>
-          <img src={image} alt="home" />
+        <ColumnRight reverse={reverse}>
+          <img
+            src={image}
+            alt="home"
+            data-aos="zoom-out"
+            data-aos-duration="1000"
+            data-aos-once="true"
+            data-aos-delay={delay}
+          />
         </ColumnRight>
       </Container>
     </Section>
